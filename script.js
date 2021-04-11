@@ -35,7 +35,7 @@ function generatePassword() {
   var passLength = prompt("How long would you like your password? Enter a number between 8 and 128.");
 
   // Alert if password !between 8 and 128. Loops until character requirements are met
-  if (passLength < 8 || passLength > 128) {
+  while (passLength < 8 || passLength > 128) {
     alert("Password must be 8-128 characters!");
     var passLength = prompt("How long would you like your password? Enter a number between 8 and 128.");
   }
@@ -47,7 +47,7 @@ function generatePassword() {
   var confirmSpecial = confirm("Would you like this password to special characters?");
 
   // Alert if password does not contain any of the specifications. Loops until at least one specification is chosen
-  if (!confirmLower && !confirmUpper && !confirmNumeric && !confirmSpecial) {
+  while (!confirmLower && !confirmUpper && !confirmNumeric && !confirmSpecial) {
     alert("Password must contain a lowercase character, uppercase character, number, or special character!");
     var confirmLower = confirm("Would you like this password to contain lowercase letters?");
     var confirmUpper = confirm("Would you like this password to contain uppercase letters?");
@@ -76,7 +76,7 @@ function generatePassword() {
 
   console.log(passSet)
 
-  // For loop selecting random characters from character set
+  // For loop selecting random characters from character set then returning randomly generated password
   var randomPass = "";
 
   for (var i = 0; i < passLength; i++) {
