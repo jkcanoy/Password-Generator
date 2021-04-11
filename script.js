@@ -15,10 +15,10 @@ generateBtn.addEventListener("click", writePassword);
 
   // Password character set
   var charSet = {
-    lower: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
-    upper: lower.toUpperCase(),
-    numeric: ["0","1","2","3","4","5","6","7","8","9"],
-    special: ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","[","{","]","}","|",";",":",",","<",".",">","/","?"]
+    lower: "abcdefghijklmnopqrstuvwxyz",
+    upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    numeric: "0123456789",
+    special: "!@#$%^&*()_-=+{[}]|:;,<.>/?"
   };  
 
 // Variables
@@ -56,31 +56,31 @@ function generatePassword() {
   }
 
   // Concatinating the character sets based on confirmations above
-  var charSet = "";
+  var passSet = "";
 
   if (confirmLower) {
-    charSet = charSet.concat(lower);
+    passSet = passSet.concat(charSet.lower);
   }
 
   if (confirmUpper) {
-    charSet = charSet.concat(upper);
+    passSet = passSet.concat(charSet.upper);
   }
 
   if (confirmNumeric) {
-    charSet = charSet.concat(numeric);
+    passSet = passSet.concat(charSet.numeric);
   }
 
   if (confirmSpecial) {
-    charSet = charSet.concat(special)
+    passSet = passSet.concat(charSet.special);
   }
 
-  console.log(charSet)
+  console.log(passSet)
 
   // For loop selecting random characters from character set
   var randomPass = "";
 
   for (var i = 0; i < passLength; i++) {
-    randomPass = randomPass + charSet(Math.floor(Math.random() * charSet.length));
+    randomPass = randomPass + passSet[(Math.floor(Math.random() * passSet.length))];
     console.log(randomPass)
   } return randomPass;
 }
