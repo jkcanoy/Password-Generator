@@ -16,7 +16,7 @@
 
 ### Screenshot
 
-    https://user-images.githubusercontent.com/78453584/114321347-474bf480-9acf-11eb-8af0-3d50c4afb1f5.png"
+    https://user-images.githubusercontent.com/78453584/114321347-474bf480-9acf-11eb-8af0-3d50c4afb1f5.png
 
 ### Link
 
